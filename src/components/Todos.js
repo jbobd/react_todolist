@@ -3,9 +3,10 @@ import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
  
 class Todos extends React.Component{
+
   render(){
   return this.props.todoProp.map( (el) => (
-   <TodoItem key={el.id} todoItemProp={el}/>
+   <TodoItem key={el.id} todoItemProp={el} markComplete={this.props.markComplete}/>
     )
   );
   }

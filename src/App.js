@@ -13,7 +13,7 @@ class App extends React.Component{
       {
         id: 2,
         title: "dos",
-        completed: false
+        completed: true
       },
       {
         id: 3,
@@ -23,10 +23,23 @@ class App extends React.Component{
     ]
   }
 
+  //marcar y desmarcar como completado
+  markComplete = (id) => {
+    this.setState(
+      { todos: this.state.todos.map( (a) =>{
+          if(a.id === id){
+            a.completed = !a.completed;
+          }
+          return a;
+        }
+        )}
+    )
+  }
+
   render(){
   return (
     <div className="App">
-      <Todos todoProp={this.state.todos} />
+      <Todos todoProp={this.state.todos} markComplete={this.markComplete} />
     </div>
   );
   }
