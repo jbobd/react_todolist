@@ -1,9 +1,0 @@
-0.5
--terminado tutorial web.
--usa información no persistente con https://jsonplaceholder.typicode.com/
-
-next:
--agregar back-end
--persistir datos en db
--implementar bootstrap o styled-components
--agregar directorio "todos" en /components  para todos los componentes de Todos
