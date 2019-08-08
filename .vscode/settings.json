@@ -1,7 +1,0 @@
-{
-    "editor.mouseWheelZoom": true,
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    }
-     
-}
