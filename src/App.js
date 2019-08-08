@@ -12,10 +12,15 @@ class App extends React.Component {
   state = {
     todos: []
   };
-
+  /*
+  componentDidMount() {
+    fetch("http://jsonplaceholder.typicode.com/todos?_limit=10")
+    .then(res => res.json())
+      .then(res => this.setState({ todos: res.data }));
+  }*/
   componentDidMount() {
     axios
-      .get("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .get("http://jsonplaceholder.typicode.com/todos?_limit=10")
       .then(res => this.setState({ todos: res.data }));
   }
   //marcar y desmarcar como completado
@@ -32,25 +37,25 @@ class App extends React.Component {
 
   //borrar todo. devuelve un nuevo array con los todos que no coincidan con el Id recibido
   delTodo = id => {
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
+    axios.delete(`http://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
       this.setState({
         todos: [...this.state.todos.filter(a => a.id !== id)]
       })
     );
   };
-
-  /* addTodo = (title) => {
+/*
+   addTodo = (title) => {
     const newTodo = {
-      id: uuid.v4(),
+      id: 343243243,
       title: title,
       complteded:false
     }
     this.setState({ todos: [...this.state.todos, newTodo]})
-  }
-  */
+  }*/
+  
   addTodo = title => {
     axios
-      .post("https://jsonplaceholder.typicode.com/todos", {
+      .post("http://jsonplaceholder.typicode.com/todos", {
         title,
         completed: false
       })
